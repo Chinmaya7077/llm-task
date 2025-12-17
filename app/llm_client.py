@@ -4,8 +4,9 @@ import httpx
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 def call_llm(scraped_text: str, commodity_name: str):
-    api_key = os.getenv("OPENROUTER_API_KEY")
-    model = os.getenv("OPENROUTER_MODEL")
+    api_key = "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"
+
+    model ="meta-llama/llama-3.2-3b-instruct:free"
 
     if not api_key:
         raise ValueError("OPENROUTER_API_KEY is missing")
@@ -43,7 +44,7 @@ def call_llm(scraped_text: str, commodity_name: str):
     Extract rows with fields:
     delivery_period (e.g. "Dec 25", "Jan 26"),
     cash_price (number),
-    futures_change (number),
+    futures_change (number) note: Futures change must be returned as a POSITIVE decimal value ,
     futures_price (number),
     basis (number),
     basis_month (string),
