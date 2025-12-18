@@ -4,9 +4,9 @@ import httpx
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 def call_llm(scraped_text: str, commodity_name: str):
-    api_key = "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"
+    api_key = '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'
 
-    model ="meta-llama/llama-3.2-3b-instruct:free"
+    model ="mistralai/devstral-2512:free"
 
     if not api_key:
         raise ValueError("OPENROUTER_API_KEY is missing")

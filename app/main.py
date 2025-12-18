@@ -14,7 +14,6 @@ def extract_commodity(payload: CommodityRequest):
 
     try:
         scraped_text = scrape_visible_text(payload.web_url)
-        print(scraped_text)
 
         llm_output = call_llm(
             scraped_text,
